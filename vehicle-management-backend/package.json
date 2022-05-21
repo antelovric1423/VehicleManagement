@@ -5,7 +5,8 @@
   "scripts": {
     "prestart": "babel ./src --out-dir build",
     "start": "node ./build/bin/www",
-    "startdev": "nodemon --exec babel-node ./src/bin/www"
+    "startdev": "nodemon --exec babel-node ./src/bin/www",
+    "initDB": "nodemon --exec babel-node ./src/dbSetup/setup"
   },
   "dependencies": {
     "@babel/cli": "^7.17.10",
@@ -21,6 +22,10 @@
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
-    "nodemon": "^2.0.16"
+    "node-postgres": "^0.6.2",
+    "nodemon": "^2.0.16",
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.19.2"
   }
 }
