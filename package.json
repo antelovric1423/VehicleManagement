@@ -1,0 +1,45 @@
+{
+  "name": "vehicle-management",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "prebe-start": "babel ./backend/src --out-dir backend/build",
+    "be-start": "node ./backend/build/bin/www",
+    "be-startdev": "nodemon --exec babel-node ./backend/bin/www",
+    "be-initDB": "nodemon --exec babel-node ./backend/dbSetup/setup",
+    "fe-serve": "vue-cli-service serve ./frontend/src/main.js",
+    "fe-build": "vue-cli-service build ./frontend/src/main.js"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.17.12",
+    "@babel/node": "^7.17.10",
+    "@babel/plugin-transform-runtime": "^7.17.12",
+    "@babel/preset-env": "^7.17.12",
+    "@babel/register": "^7.17.7",
+    "@babel/runtime": "^7.17.9",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^16.0.1",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "node-postgres": "^0.6.2",
+    "nodemon": "^2.0.16",
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.19.2",
+    "core-js": "^3.8.3",
+    "vue": "^2.6.14"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "vue-template-compiler": "^2.6.14"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

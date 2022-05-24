@@ -1,4 +1,4 @@
-import sequelize from "../sequelize/"
+import sequelize from "../sequelize"
 
 async function resetDB() {
     const vehicleDataSet = require("./VehicleInfo.json")

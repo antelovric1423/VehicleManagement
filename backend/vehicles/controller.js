@@ -1,5 +1,5 @@
 import sequelize from "../sequelize";
-import { getIdParam } from "./helpers";
+import { getIdParam } from "../helpers";
 
 export async function vehiclesGetAll(req, res) {
     const vehicles = await sequelize.models.Vehicles.findAll({ attributes: ["id", "make", "model", "year"] });

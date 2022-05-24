@@ -3,6 +3,7 @@ import debug from 'debug';
 import http from 'http';
 import app from '../app';
 import sequelize from '../sequelize';
+
 const PORT = 3000
 app.set('port', PORT);
 const server = http.createServer(app);

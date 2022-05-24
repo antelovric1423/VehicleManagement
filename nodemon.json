@@ -4,7 +4,7 @@
         "nodemon.json",
         ".babelrc",
         ".env",
-        "src/"
+        "backend/"
     ],
     "verbose": true,
     "ignore": [
