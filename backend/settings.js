@@ -1,4 +1,4 @@
-const dotenv = require("dotenv");
+const dotenv = require('dotenv');
 
 dotenv.config();
 export const testEnvVariable = process.env.TEMP_ENV_VARIABLE;

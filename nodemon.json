@@ -1,14 +1,14 @@
 {
-    "watch": [
-        "package.json",
-        "nodemon.json",
-        ".babelrc",
-        ".env",
-        "backend/"
-    ],
-    "verbose": true,
-    "ignore": [
-        "*.test.js",
-        "*.spec.js"
-    ]
+  "watch": [
+    "package.json",
+    "nodemon.json",
+    ".babelrc",
+    ".env",
+    "backend/"
+  ],
+  "verbose": true,
+  "ignore": [
+    "*.test.js",
+    "*.spec.js"
+  ]
 }

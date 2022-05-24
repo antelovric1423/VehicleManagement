@@ -1,6 +1,6 @@
-import logger from 'morgan';
-import express from 'express';
 import cookieParser from 'cookie-parser';
+import express from 'express';
+import logger from 'morgan';
 import vehiclesRouter from './vehicles/router';
 
 const app = express();

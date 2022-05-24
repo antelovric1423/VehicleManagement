@@ -34,8 +34,12 @@
     "vue": "^2.6.14"
   },
   "devDependencies": {
+    "@extensionengine/eslint-config": "^3.0.0",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
+    "@babel/eslint-parser": "^7.17.0",
+    "eslint": "^8.16.0",
+    "eslint-plugin-vue": "^9.0.1",
     "vue-template-compiler": "^2.6.14"
   },
   "browserslist": [

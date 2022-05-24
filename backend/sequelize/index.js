@@ -5,7 +5,6 @@ import vehicleModel from "../vehicles/model"
 
 dotenv.config()
 
-console.log(`DBCONNECTION: ${dbConnectionString}`)
 const sequelize = new Sequelize(dbConnectionString, { dialect: "postgres" });
 
 vehicleModel(sequelize)
