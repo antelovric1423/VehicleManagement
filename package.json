@@ -7,8 +7,8 @@
     "be-start": "node ./backend/build/bin/www",
     "be-startdev": "nodemon --exec babel-node ./backend/bin/www",
     "be-initDB": "nodemon --exec babel-node ./backend/dbSetup/setup",
-    "fe-serve": "vue-cli-service serve ./frontend/src/main.js",
-    "fe-build": "vue-cli-service build ./frontend/src/main.js"
+    "fe-serve": "vue-cli-service serve ./frontend/main.js",
+    "fe-build": "vue-cli-service build ./frontend/main.js"
   },
   "dependencies": {
     "@babel/cli": "^7.17.10",
