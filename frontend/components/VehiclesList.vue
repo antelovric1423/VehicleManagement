@@ -45,13 +45,29 @@
         </v-dialog>
       </v-card-title>
 
+      <v-dialog v-model="dialogDelete" max-width="500px">
+        <v-card>
+          <v-card-title>
+            <span class="text-h5">Are you sure you want to delete this item?</span>
+          </v-card-title>
+
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn color="blue darken-1" text @click="close">
+              Cancel
+            </v-btn>
+            <v-btn color="blue darken-1" text @click="deleteItemConfirm">
+              Delete
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
+
       <v-data-table dense :headers="headers" :items="this.vehicles" item-key="id" class="elevation-1"
         :loading="this.isLoading" loading-text="Loading... Please wait" :search="search">
-
         <template v-slot:item.actions="{ item }">
           <v-icon medium @click="deleteItem(item)">mdi-delete</v-icon>
         </template>
-
       </v-data-table>
     </v-card>
   </v-container>
@@ -98,8 +114,14 @@ export default {
       this.close()
     },
     deleteItem(item) {
-      console.log("emit delete: " + item.id)
-      this.$emit("deleteVehicle", item.id)
+      this.editedItem = item;
+      console.log(item)
+      this.dialogDelete = true
+    },
+    deleteItemConfirm() {
+      console.log("emit delete: " + this.editedItem.id)
+      this.$emit("deleteVehicle", this.editedItem.id)
+      this.close()
     }
   }
 }
