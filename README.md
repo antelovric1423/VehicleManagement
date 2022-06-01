@@ -10,7 +10,7 @@ npm install
 
 ### Run locally with server reload on changes
 ```
-npm run be-startdev
+npm run be-dev
 ```
 
 ### Compile then run
@@ -24,7 +24,7 @@ Server starts on http://localhost:3000
 
 ### Compiles and hot-reloads for development
 ```
-npm run fe-serve
+npm run fe-dev
 ```
 
 ### Compiles and minifies for production

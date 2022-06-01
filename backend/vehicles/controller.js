@@ -32,7 +32,16 @@ export async function vehiclesPost(req, res) {
   }
 
   const importedVehicle = await sequelize.models.Vehicles.create(vehicle)
-  res.status(200).send(importedVehicle)
+
+  const resBody = {
+    id: importedVehicle.dataValues.id,
+    make: importedVehicle.dataValues.make,
+    model: importedVehicle.dataValues.model,
+    year: importedVehicle.dataValues.year,
+  }
+
+  res.status(200).send(resBody)
+  console.log(resBody)
 }
 
 export async function vehiclesDeleteById(req, res) {
