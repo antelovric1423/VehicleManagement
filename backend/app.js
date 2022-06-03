@@ -1,12 +1,13 @@
 import cookieParser from 'cookie-parser';
+import cors from 'cors';
 import express from 'express';
+import { frontendAddress } from './settings';
 import logger from 'morgan';
 import vehiclesRouter from './vehicles/router';
-import cors from "cors"
 
 const app = express();
 app.use(cors({
-  origin: "http://localhost:8080"
+  origin: frontendAddress
 }));
 app.use(logger('dev'));
 app.use(express.json());

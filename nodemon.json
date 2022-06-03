@@ -4,7 +4,8 @@
     "nodemon.json",
     ".babelrc",
     ".env",
-    "backend/"
+    "backend/",
+    "vue.config.js"
   ],
   "verbose": true,
   "ignore": [
