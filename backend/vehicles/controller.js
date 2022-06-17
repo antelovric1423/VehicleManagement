@@ -1,7 +1,7 @@
-import sequelize from "../sequelize";
 import { getIdParam } from "../helpers";
-import { vehiclePostSchema } from "./validation";
 import Joi from "joi"
+import sequelize from "../sequelize";
+import { vehiclePostSchema } from "./validation";
 
 export async function vehiclesGetAll(req, res) {
   const vehicles = await sequelize.models.Vehicles.findAll({ attributes: ["id", "make", "model", "year"] });
@@ -9,6 +9,7 @@ export async function vehiclesGetAll(req, res) {
 }
 
 export async function vehiclesPost(req, res) {
+  console.log(req.body)
   try {
     Joi.assert(req.body, vehiclePostSchema)
   } catch (error) {

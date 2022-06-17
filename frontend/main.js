@@ -1,11 +1,12 @@
-import Vue from 'vue'
-import App from './App.vue'
-import vuetify from "./plugins/vuetify"
-import '@mdi/font/css/materialdesignicons.css'
+import '@mdi/font/css/materialdesignicons.css';
 
-Vue.config.productionTip = false
+import app from './App.vue';
+import Vue from 'vue';
+import vuetify from './plugins/vuetify';
+
+Vue.config.productionTip = false;
 
 new Vue({
-  render: h => h(App),
+  render: h => h(app),
   vuetify
-}).$mount('#app')
+}).$mount('#app');
