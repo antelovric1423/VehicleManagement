@@ -1,6 +1,6 @@
 import Joi from "joi"
 
-export const vehiclePostSchema = Joi.object({
+export const vehicleSchema = Joi.object({
   make: Joi.string()
     .min(1)
     .uppercase()
