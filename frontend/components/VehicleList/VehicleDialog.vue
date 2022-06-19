@@ -1,13 +1,8 @@
 <template>
   <v-dialog v-model="showDialog" max-width="500px">
-    <template #activator="{ on, attrs }">
-      <v-btn color="primary" dark v-bind="attrs" v-on="on">
-        Add vehicle
-      </v-btn>
-    </template>
     <v-card>
       <v-card-title>
-        <span class="text-h5">Add new vehicle</span>
+        <span class="text-h5">{{ title }}</span>
       </v-card-title>
       <v-card-text>
         <v-container>
@@ -26,11 +21,11 @@
       </v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn color="blue darken-1" text @click="close">
+        <v-btn color="blue darken-1" text @click="this.$emit('cancel')">
           Cancel
         </v-btn>
-        <v-btn color="blue darken-1" text @click="add">
-          Add
+        <v-btn color="blue darken-1" text @click="confirm">
+          Confirm
         </v-btn>
       </v-card-actions>
     </v-card>
@@ -41,22 +36,43 @@
 const initItem = () => ({ make: "", model: "", year: null });
 export default {
   name: 'vehicle-dialog',
+  props: {
+    show: { type: Boolean, required: true },
+    item: { type: Object }
+  },
   data: () => ({
-    showDialog: false,
-    editedItem: initItem()
+    editedItem: initItem(),
+    showDialog: false
   }),
   methods: {
-    close() {
-      this.showDialog = false;
+    confirm() {
+      this.$emit("confirm", this.editedItem);
       this.editedItem = initItem();
-    },
-    add() {
-
-      console.log("add")
-      this.$emit("createVehicle", this.editedItem);
-      this.editedItem = initItem();
-      this.close();
     }
+  },
+  watch: {
+    show(newValue, oldValue) {
+      if (newValue === true) {
+        this.showDialog = true;
+        if (this.item !== null) {
+          this.editedItem = { ...this.item };
+        }
+      }
+      else {
+        this.showDialog = false;
+        this.editedItem = initItem();
+      }
+    },
+    showDialog(newValue, oldValue) {
+      if (newValue === false)
+        this.$emit('cancel')
+    }
+  },
+  computed:
+  {
+    title() {
+      return this.item === null ? "Add new item" : "Edit item"
+    },
   }
 }
 </script>
