@@ -6,6 +6,9 @@ Simple application with frontend and backend that keeps a database table of vehi
 npm install
 ```
 
+## Prerequisite
+Create .env file from .env.example
+
 ## Backend server
 
 ### Run locally with server reload on changes
